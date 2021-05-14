@@ -1,13 +1,12 @@
 import React from 'react';
+import './search-bar.styles.css'
 
-export const SearchBar = () => {
-    return(
-        <div>
+export const SearchBar = ({placeHolder, handleChange}) => (
+        <div className='search'>
             <input 
              type='search' 
-             placeholder='search for monsters' 
-             onChange={ e => this.setState({searchField: e.target.value})} 
+             placeholder={placeHolder}
+             onChange={handleChange} 
             />  
         </div>
-    )
-}
+)

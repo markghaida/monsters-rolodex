@@ -18,10 +18,6 @@ class App extends Component {
       .then(response => response.json())
       .then(users => this.setState({monsters: users}));
   }
-//  I need to create a function that is triggered everytime onChange is triggered
-//  this new function should essentially take in the monsters array and then apply a filter function to it that reflect the onChange e.target.value
-
-
 
   render() {
     const { monsters, searchField } = this.state;
@@ -30,7 +26,7 @@ class App extends Component {
     )
     return (
       <div className='App'>
-        <SearchBar />
+        <SearchBar placeHolder='search for monsters' handleChange={e => this.setState({searchField: e.target.value})}/>
         <CardList monsters={filteredMonsters}/>
       </div>
     )
