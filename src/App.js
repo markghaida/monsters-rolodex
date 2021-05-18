@@ -12,13 +12,14 @@ class App extends Component {
       searchField: ''
     };
   }
-
+  
+  // example of a non-hook approach to state and fetching 
+  
   componentDidMount(){
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(users => this.setState({monsters: users}));
   }
-
   render() {
     const { monsters, searchField } = this.state;
     const filteredMonsters = monsters.filter(monster =>
